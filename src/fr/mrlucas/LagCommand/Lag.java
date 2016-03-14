@@ -13,12 +13,9 @@ import net.minecraft.server.v1_8_R3.MinecraftServer;
 
 public class Lag extends JavaPlugin{
 
-
-
-	
 	@Override
 	public void onEnable() {
-      System.out.println("/lag > Enabled !");
+        System.out.println("/lag > Enabled !");
 	}
 	
 	@Override
@@ -29,13 +26,20 @@ public class Lag extends JavaPlugin{
 		if(sender instanceof Player){
 			if(label.equalsIgnoreCase("lag")){
 				
-				p.sendMessage("§6§m-------------§e LAG §6§m-------------");
+				p.sendMessage("§6§m-----------------------------------------");
+				
+				p.sendMessage("§r                   §e§l>> Lag's info <<");
+				p.sendMessage("");
 				p.sendMessage("§eServer: §7"+p.getServer().getServerName());
-				p.sendMessage("§eDate: §7"+ c.get(Calendar.DAY_OF_MONTH) + "/"+ getMonth(c.get(Calendar.MONTH)) + "/" + c.get(Calendar.YEAR) + "  " + c.get(Calendar.HOUR_OF_DAY) + ":" + c.get(Calendar.MINUTE) + ":" + c.get(Calendar.SECOND));
+				p.sendMessage("§eDate: §7" +
+				    //Date
+						c.get(Calendar.DAY_OF_MONTH) + "/"+ getMonth(c.get(Calendar.MONTH)) + "/" + c.get(Calendar.YEAR) + 
+					//Hours	
+						" | " + c.get(Calendar.HOUR_OF_DAY) + ":" + c.get(Calendar.MINUTE) + ":" + c.get(Calendar.SECOND));
 				p.sendMessage("§ePing: §7"+getPing(p)+"ms");
 				
 				 StringBuilder sb = new StringBuilder("§6TPS from last 1m, 5m, 15m: " );
-			        for ( double tps : MinecraftServer.getServer().recentTps )
+			        for (double tps : MinecraftServer.getServer().recentTps)
 			        {
 			            sb.append( format( tps ) );
 			            sb.append( ", " );
@@ -43,8 +47,8 @@ public class Lag extends JavaPlugin{
 			        
 			    p.sendMessage(sb.substring( 0, sb.length() - 2 ));   
 			    p.sendMessage("§a20 §7= §aPerfect !");
-	
-				p.sendMessage("§6§m-------------------------------");
+	           
+				p.sendMessage("§6§m-----------------------------------------");
 			}
 			
 		}
@@ -65,25 +69,25 @@ public class Lag extends JavaPlugin{
 	 
 	 public int getMonth(int month){
 		 if(month == Calendar.JANUARY){
-			 return 01;
+			 return 1;
 		 }
 		 if(month == Calendar.FEBRUARY){
-			 return 02;
+			 return 2;
 		 }
 		 if(month == Calendar.MARCH){
-			 return 03;
+			 return 3;
 		 }
 		 if(month == Calendar.APRIL){
-			 return 04;
+			 return 4;
 		 }
 		 if(month == Calendar.MAY){
-			 return 05;
+			 return 5;
 		 }
 		 if(month == Calendar.JUNE){
-			 return 06;
+			 return 6;
 		 }
 		 if(month == Calendar.JULY){
-			 return 07;
+			 return 7;
 		 }
 		 if(month == Calendar.AUGUST){
 			 return 8;
