@@ -1,0 +1,7 @@
+name: LagCommand
+main: fr.mrlucas.LagCommand.Lag
+version: 1.0
+author: MrLucas777
+commands:
+    lag:
+        description: A Lag Command by MrLucas777
